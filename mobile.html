@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>FUNJU Dance Challenge — Презентация Промо (Mobile)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1d 100%);
+        color: #ffffff;
+        overflow-x: hidden;
+        font-size: 14px;
+      }
+
+      .presentation {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+      }
+
+      .slide {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 80px 15px 100px 15px;
+        margin-bottom: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+        border: 1px solid rgba(230, 57, 70, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      .slide-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, #e63946 0%, #ff6b9d 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.2;
+      }
+
+      .slide-subtitle {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #e63946;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      /* iPhone Mockup - Smaller for mobile */
+      .iphone-mockup {
+        width: 240px;
+        height: 480px;
+        background: #000;
+        border-radius: 35px;
+        padding: 12px;
+        box-shadow: 0 15px 30px rgba(230, 57, 70, 0.3);
+        position: relative;
+        border: 2px solid #e63946;
+      }
+
+      .iphone-screen {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1d 100%);
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: #e63946;
+        text-align: center;
+        padding: 15px;
+        border: 2px solid rgba(230, 57, 70, 0.3);
+      }
+
+      .iphone-notch {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 20px;
+        background: #000;
+        border-radius: 0 0 12px 12px;
+        z-index: 10;
+      }
+
+      /* Prizes Grid - Stack on mobile */
+      .prizes-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .prize-card {
+        background: rgba(26, 26, 46, 0.8);
+        border: 2px solid #e63946;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .prize-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+      }
+
+      .prize-title {
+        font-size: 1.3rem;
+        color: #e63946;
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
+
+      .prize-count {
+        font-size: 0.9rem;
+        color: #ff6b9d;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .prize-list {
+        list-style: none;
+        text-align: left;
+        font-size: 0.85rem;
+        line-height: 1.6;
+      }
+
+      .prize-list li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .prize-list li:before {
+        content: "•";
+        color: #e63946;
+        font-size: 1.3rem;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Mechanics Steps - Stack on mobile */
+      .mechanics-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .step {
+        background: rgba(230, 57, 70, 0.1);
+        border: 2px solid #e63946;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .step-number {
+        font-size: 2.5rem;
+        color: #e63946;
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .step-text {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      /* Metrics Table - Mobile optimized */
+      .metrics-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: rgba(26, 26, 46, 0.8);
+        border-radius: 12px;
+        overflow: hidden;
+        font-size: 0.75rem;
+      }
+
+      .metrics-table th {
+        background: #e63946;
+        color: #fff;
+        padding: 12px 8px;
+        text-align: left;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .metrics-table td {
+        padding: 12px 8px;
+        border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+        font-size: 0.75rem;
+      }
+
+      .metrics-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .goal-number {
+        color: #e63946;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .stretch-goal {
+        color: #ff6b9d;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      /* Budget Section - Mobile optimized */
+      .budget-section {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .budget-category {
+        background: rgba(26, 26, 46, 0.8);
+        border: 2px solid #e63946;
+        border-radius: 12px;
+        padding: 20px 15px;
+        margin-bottom: 20px;
+      }
+
+      .budget-category h3 {
+        color: #e63946;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #e63946;
+        padding-bottom: 8px;
+      }
+
+      .budget-category h4 {
+        font-size: 1rem;
+      }
+
+      .budget-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 10px;
+      }
+
+      .budget-item:last-child {
+        border-bottom: none;
+      }
+
+      .budget-label {
+        font-size: 0.9rem;
+        flex: 1;
+      }
+
+      .budget-amount {
+        font-size: 1.1rem;
+        color: #e63946;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .budget-total {
+        background: linear-gradient(135deg, #e63946 0%, #ff6b9d 100%);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .budget-total-label {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .budget-total-amount {
+        font-size: 2.5rem;
+        font-weight: 800;
+      }
+
+      /* Info Box - Mobile optimized */
+      .info-box {
+        background: rgba(230, 57, 70, 0.1);
+        border-left: 4px solid #e63946;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+
+      .info-box p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .info-box strong {
+        color: #e63946;
+      }
+
+      /* Navigation - Mobile optimized with larger touch targets */
+      .nav-buttons {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 1000;
+      }
+
+      .nav-button {
+        background: #e63946;
+        color: white;
+        border: none;
+        padding: 14px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+        min-width: 100px;
+        touch-action: manipulation;
+      }
+
+      .nav-button:active {
+        background: #ff6b9d;
+        transform: scale(0.95);
+      }
+
+      .slide-counter {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        background: rgba(230, 57, 70, 0.9);
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        z-index: 1000;
+      }
+
+      /* Placeholder styles */
+      .placeholder {
+        background: rgba(230, 57, 70, 0.1);
+        border: 2px dashed #e63946;
+        border-radius: 10px;
+        padding: 30px 15px;
+        text-align: center;
+        color: #e63946;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      /* Carousel Styles - Mobile optimized */
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-item {
+        min-width: 100%;
+        flex-shrink: 0;
+      }
+
+      /* Larger touch targets for mobile */
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(230, 57, 70, 0.9);
+        color: white;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: all 0.3s ease;
+        touch-action: manipulation;
+      }
+
+      .carousel-button:active {
+        background: #ff6b9d;
+        transform: translateY(-50%) scale(0.9);
+      }
+
+      .carousel-button.prev {
+        left: 5px;
+      }
+
+      .carousel-button.next {
+        right: 5px;
+      }
+
+      .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 15px;
+      }
+
+      .carousel-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(230, 57, 70, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        touch-action: manipulation;
+      }
+
+      .carousel-indicator.active {
+        background: #e63946;
+        transform: scale(1.3);
+      }
+
+      /* Mobile-specific adjustments */
+      @media (max-width: 480px) {
+        .slide-title {
+          font-size: 1.5rem;
+        }
+
+        .slide-subtitle {
+          font-size: 1rem;
+        }
+
+        .iphone-mockup {
+          width: 200px;
+          height: 400px;
+        }
+
+        .budget-total-amount {
+          font-size: 2rem;
+        }
+
+        .metrics-table th,
+        .metrics-table td {
+          padding: 8px 5px;
+          font-size: 0.7rem;
+        }
+
+        /* Stack budget ROI grid on very small screens */
+        .budget-category div[style*="grid-template-columns"] {
+          display: flex !important;
+          flex-direction: column !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-counter" id="slideCounter">Слайд 1 / 7</div>
+
+    <div class="presentation">
+      <!-- Slide 1: Title + Video -->
+      <div class="slide" data-slide="1">
+        <h1 class="slide-title">FUNJU Dance Challenge</h1>
+        <p class="slide-subtitle">
+          🌀 Розкрутися з FUNJU — Музична Промо-Кампанія
+        </p>
+
+        <div class="iphone-mockup">
+          <div class="iphone-notch"></div>
+          <div class="iphone-screen" style="padding: 0;">
+            <video style="width: 100%; height: 100%; object-fit: cover; border-radius: 25px;" loop playsinline controls>
+              <source src="funju_promo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 20px; max-width: 100%">
+          <p>
+            <strong>Концепція:</strong> Музичний кліп з віртуальним K-pop
+            амбассадором Funju + танцювальний челендж #FUNJUDance
+          </p>
+          <p>
+            <strong>Формат:</strong> • 20 секунд промо-відео — вірусний
+            челендж<br />
+            • 3× продуктових відео по 5 секунд — новорічні оффери
+          </p>
+          <p>
+            <strong>Платформи:</strong> @funju.soju — TikTok, Instagram, YouTube
+          </p>
+
+          <p style="margin-top: 15px">
+            <strong>🎯 Таргетована Новорічна Стратегія (ЦА: 350K):</strong>
+          </p>
+          <p>
+            1. <strong style="color: #e63946">ТОЧНИЙ ОХВАТ</strong> → 60-80%
+            цільової аудиторії<br />
+            2. <strong style="color: #e63946">ВИСОКА ЗАЛУЧЕНІСТЬ</strong> →
+            Челендж з призами<br />
+            3. <strong style="color: #e63946">BRAND ASSOCIATION</strong> → FUNJU
+            = веселощі, свято, K-pop<br />
+            4. <strong style="color: #e63946">FREQUENCY 3-4x</strong> →
+            Повторний охоплення<br />
+            5. <strong style="color: #e63946">UGC КОНТЕНТ</strong> → 20-50
+            відео = безкоштовний контент на 2026
+          </p>
+
+          <p style="margin-top: 12px">
+            <strong>🎯 Мета:</strong> Охопити
+            <strong style="color: #e63946">більшість (60-80%)</strong> ЦА
+            під час піку новорічних продажів.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 2: Product Videos -->
+      <div class="slide" data-slide="2">
+        <h2 class="slide-title">Продуктові Відео</h2>
+        <p class="slide-subtitle">3× Відео по 5 секунд</p>
+
+        <div style="max-width: 100%; margin: 20px auto">
+          <div class="carousel-container" id="productCarousel">
+            <div class="carousel-track">
+              <!-- Video 1 -->
+              <div class="carousel-item">
+                <div style="text-align: center">
+                  <div class="iphone-mockup" style="margin: 0 auto">
+                    <div class="iphone-notch"></div>
+                    <div class="iphone-screen" style="padding: 0;">
+                      <video style="width: 100%; height: 100%; object-fit: cover; border-radius: 25px;" loop playsinline controls>
+                        <source src="assets/product-vids/apple_ad.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                  <p style="margin-top: 15px; font-size: 1.1rem; color: #e63946; font-weight: 600;">
+                    Відео #1: Apple Soju
+                  </p>
+                  <p style="font-size: 0.9rem; margin-top: 8px">
+                    CTA: "Купи на ROZETKA"
+                  </p>
+                </div>
+              </div>
+
+              <!-- Video 2 -->
+              <div class="carousel-item">
+                <div style="text-align: center">
+                  <div class="iphone-mockup" style="margin: 0 auto">
+                    <div class="iphone-notch"></div>
+                    <div class="iphone-screen" style="padding: 0;">
+                      <video style="width: 100%; height: 100%; object-fit: cover; border-radius: 25px;" loop playsinline controls>
+                        <source src="assets/product-vids/citrus_ad.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                  <p style="margin-top: 15px; font-size: 1.1rem; color: #ff6b9d; font-weight: 600;">
+                    Відео #2: Citrus Soju
+                  </p>
+                  <p style="font-size: 0.9rem; margin-top: 8px">
+                   CTA: "Новорічна знижка"
+                  </p>
+                </div>
+              </div>
+
+              <!-- Video 3 -->
+              <div class="carousel-item">
+                <div style="text-align: center">
+                  <div class="iphone-mockup" style="margin: 0 auto">
+                    <div class="iphone-notch"></div>
+                    <div class="iphone-screen" style="padding: 0;">
+                      <video style="width: 100%; height: 100%; object-fit: cover; border-radius: 25px;" loop playsinline controls>
+                        <source src="assets/product-vids/watermelon_ad.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                  <p style="margin-top: 15px; font-size: 1.1rem; color: #ffb347; font-weight: 600;">
+                    Відео #3: Watermelon Soju
+                  </p>
+                  <p style="font-size: 0.9rem; margin-top: 8px">
+                   CTA: "Новий смак 2026"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-button prev" onclick="moveCarousel('productCarousel', -1)">‹</button>
+            <button class="carousel-button next" onclick="moveCarousel('productCarousel', 1)">›</button>
+          </div>
+
+          <div class="carousel-indicators">
+            <div class="carousel-indicator active" onclick="goToSlide('productCarousel', 0)"></div>
+            <div class="carousel-indicator" onclick="goToSlide('productCarousel', 1)"></div>
+            <div class="carousel-indicator" onclick="goToSlide('productCarousel', 2)"></div>
+          </div>
+        </div>
+
+        <div class="info-box" style="max-width: 100%; margin-top: 30px">
+          <p><strong>🎄 Новорічна Стратегія:</strong></p>
+          <p>
+            • Відео 1-3: Прямі продажі з новорічними офферами<br />
+            • Усі відео ведуть на ROZETKA або сайт
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 3: Prizes Overview -->
+      <div class="slide" data-slide="3">
+        <h2 class="slide-title">Призи Челенджу</h2>
+        <p class="slide-subtitle">Що вигравають учасники #FUNJUDance</p>
+
+        <div style="max-width: 100%; margin: 20px auto">
+          <div class="carousel-container" id="prizesCarousel">
+            <div class="carousel-track">
+              <!-- Cap -->
+              <div class="carousel-item">
+                <div style="height: 350px; display: flex; align-items: center; justify-content: center;">
+                  <img src="assets/prizes/cap2.png" style="width: 100%; max-width: 300px; height: auto; object-fit: contain;" alt="FUNJU Cap">
+                </div>
+              </div>
+
+              <!-- Hoodie -->
+              <div class="carousel-item">
+                <div style="height: 350px; display: flex; align-items: center; justify-content: center;">
+                  <img src="assets/prizes/hoodie.png" style="width: 100%; max-width: 300px; height: auto; object-fit: contain;" alt="FUNJU Hoodie">
+                </div>
+              </div>
+
+              <!-- T-shirt -->
+              <div class="carousel-item">
+                <div style="height: 350px; display: flex; align-items: center; justify-content: center;">
+                  <img src="assets/prizes/tshirt.png" style="width: 100%; max-width: 300px; height: auto; object-fit: contain;" alt="FUNJU T-shirt">
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-button prev" onclick="moveCarousel('prizesCarousel', -1)">‹</button>
+            <button class="carousel-button next" onclick="moveCarousel('prizesCarousel', 1)">›</button>
+          </div>
+
+          <div class="carousel-indicators">
+            <div class="carousel-indicator active" onclick="goToSlide('prizesCarousel', 0)"></div>
+            <div class="carousel-indicator" onclick="goToSlide('prizesCarousel', 1)"></div>
+            <div class="carousel-indicator" onclick="goToSlide('prizesCarousel', 2)"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Prize Structure Detailed -->
+      <div class="slide" data-slide="4">
+        <h2 class="slide-title">Структура Призів</h2>
+        <p class="slide-subtitle">Детальна розбивка (20 переможців)</p>
+
+        <div class="prizes-grid" style="max-width: 100%">
+          <div class="prize-card">
+            <div class="prize-icon">🥇</div>
+            <h3 class="prize-title">Гран-Прі</h3>
+            <p class="prize-count">(2 переможці)</p>
+            <ul class="prize-list">
+              <li>Виступ на івенті запуску FUNJU</li>
+              <li>Повний набір мерчу (худі, футболка, кепка)</li>
+              <li>VIP-доступ на івент для +2 гостей</li>
+              <li>1-місячний запас FUNJU</li>
+            </ul>
+          </div>
+
+          <div class="prize-card">
+            <div class="prize-icon">🥈</div>
+            <h3 class="prize-title">2-е Місце</h3>
+            <p class="prize-count">(3 переможці)</p>
+            <ul class="prize-list">
+              <li>Фірмова худі FUNJU</li>
+              <li>VIP-квитки на івент для +1 гостя</li>
+              <li>1-місячний запас FUNJU</li>
+            </ul>
+          </div>
+
+          <div class="prize-card">
+            <div class="prize-icon">🥉</div>
+            <h3 class="prize-title">3-є Місце</h3>
+            <p class="prize-count">(5 переможців)</p>
+            <ul class="prize-list">
+              <li>Футболка + кепка FUNJU</li>
+              <li>Загальні квитки на івент</li>
+              <li>1-місячний запас FUNJU</li>
+            </ul>
+          </div>
+
+          <div class="prize-card">
+            <div class="prize-icon">🎖️</div>
+            <h3 class="prize-title">Почесні Згадки</h3>
+            <p class="prize-count">(10 учасників)</p>
+            <ul class="prize-list">
+              <li>Футболка FUNJU</li>
+              <li>Семпли продукції</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-box" style="max-width: 100%; margin-top: 20px">
+          <p><strong>💰 Загальна вартість призового фонду: ₴35,000</strong></p>
+        </div>
+      </div>
+
+      <!-- Slide 5: Mechanics -->
+      <div class="slide" data-slide="5">
+        <h2 class="slide-title">Механіка Челенджу</h2>
+        <p class="slide-subtitle">Як Взяти Участь</p>
+
+        <div class="mechanics-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              Записати свою версію танцю FUNJU Dance<br />
+              <strong>(7-15 секунд)</strong>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              Опублікувати з хештегом<br />
+              <strong>#FUNJUDance</strong>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              Відмітити в описі<br />
+              <strong>@funju.soju</strong>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-text">
+              Підписатися на<br />
+              <strong>@funju.soju</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box" style="max-width: 100%; margin-top: 30px">
+          <p><strong>Період Подачі:</strong> 2 тижні з моменту запуску</p>
+          <p><strong>Критерії Оцінки:</strong></p>
+          <p>
+            • Креативність (40%)<br />
+            • Виконання руху (30%)<br />
+            • Енергія (20%)<br />
+            • Інтеграція бренду (10%)
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 6: Metrics -->
+      <div class="slide" data-slide="6">
+        <h2 class="slide-title">Метрики Успіху</h2>
+        <p class="slide-subtitle">🎯 Новорічна Кампанія (ЦА: 350K)</p>
+
+        <div class="info-box" style="max-width: 100%; margin-bottom: 20px">
+          <p><strong>🎯 Цільова Аудиторія: ~350,000</strong></p>
+          <p>
+            • Вік: 22-35 років<br />
+            • Інтереси: K-pop, азіатська культура<br />
+            • Географія: Київ, Львів, Харків, Одеса<br />
+            • Поведінка: Активні в TikTok/Instagram
+          </p>
+          <p style="margin-top: 10px">
+            <strong>Стратегія:</strong> Охопити <strong style="color: #e63946">60-80%</strong> з частотою 3-4 покази
+          </p>
+        </div>
+
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>Метрика</th>
+              <th>Базова</th>
+              <th>Розширена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="3" style="background: rgba(230, 57, 70, 0.1); font-weight: bold;">ОХОПЛЕННЯ ЦА</td>
+            </tr>
+            <tr>
+              <td>Унікальний Охват</td>
+              <td><span class="goal-number">210K</span></td>
+              <td><span class="stretch-goal">280K</span></td>
+            </tr>
+            <tr>
+              <td>% від ЦА</td>
+              <td><span class="goal-number">60%</span></td>
+              <td><span class="stretch-goal">80%</span></td>
+            </tr>
+            <tr>
+              <td>Покази</td>
+              <td><span class="goal-number">750K</span></td>
+              <td><span class="stretch-goal">1.2M</span></td>
+            </tr>
+            <tr>
+              <td colspan="3" style="background: rgba(230, 57, 70, 0.1); font-weight: bold;">ЗАЛУЧЕНІСТЬ</td>
+            </tr>
+            <tr>
+              <td>Лайки + Коменти</td>
+              <td><span class="goal-number">5K</span></td>
+              <td><span class="stretch-goal">10K</span></td>
+            </tr>
+            <tr>
+              <td>UGC Відео</td>
+              <td><span class="goal-number">20</span></td>
+              <td><span class="stretch-goal">50</span></td>
+            </tr>
+            <tr>
+              <td colspan="3" style="background: rgba(230, 57, 70, 0.1); font-weight: bold;">РІСТ СПІЛЬНОТИ</td>
+            </tr>
+            <tr>
+              <td>Нові Підписники</td>
+              <td><span class="goal-number">+1K</span></td>
+              <td><span class="stretch-goal">+3K</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Slide 7: Budget -->
+      <div class="slide" data-slide="7">
+        <h2 class="slide-title">Бюджет</h2>
+        <p class="slide-subtitle">₴120,000 — Таргетована Кампанія</p>
+
+        <div class="budget-section">
+          <!-- Influencers -->
+          <div class="budget-category">
+            <h3>🌟 Інфлюенсери: ₴45,000</h3>
+            <div class="budget-item">
+              <span class="budget-label">Блогер #1 (80-120K)</span>
+              <span class="budget-amount">₴25,000</span>
+            </div>
+            <div class="budget-item">
+              <span class="budget-label">Блогер #2 (25-40K)</span>
+              <span class="budget-amount">₴10,000</span>
+            </div>
+            <div class="budget-item">
+              <span class="budget-label">Блогер #3 (20-35K)</span>
+              <span class="budget-amount">₴10,000</span>
+            </div>
+          </div>
+
+          <!-- Ads -->
+          <div class="budget-category">
+            <h3>📱 Реклама: ₴40,000</h3>
+            <h4 style="color: #e63946; margin-top: 15px; margin-bottom: 10px;">🎯 AWARENESS: ₴22,000</h4>
+            <div class="budget-item">
+              <span class="budget-label">TikTok Ads</span>
+              <span class="budget-amount">₴10,000</span>
+            </div>
+            <div class="budget-item">
+              <span class="budget-label">Instagram Reels</span>
+              <span class="budget-amount">₴8,000</span>
+            </div>
+            <div class="budget-item">
+              <span class="budget-label">YouTube Shorts</span>
+              <span class="budget-amount">₴4,000</span>
+            </div>
+
+            <h4 style="color: #ff6b9d; margin-top: 15px; margin-bottom: 10px;">💰 CONVERSION: ₴18,000</h4>
+            <div class="budget-item">
+              <span class="budget-label">TikTok Conversion</span>
+              <span class="budget-amount">₴8,000</span>
+            </div>
+            <div class="budget-item">
+              <span class="budget-label">Instagram Stories</span>
+              <span class="budget-amount">₴6,000</span>
+            </div>
+            <div class="budget-item">
+              <span class="budget-label">Instagram Retarget</span>
+              <span class="budget-amount">₴4,000</span>
+            </div>
+          </div>
+
+          <!-- Prizes -->
+          <div class="budget-category">
+            <h3>🎁 Призи: ₴30,000</h3>
+            <div class="budget-item">
+              <span class="budget-label">Мерч FUNJU</span>
+              <span class="budget-amount">₴20,000</span>
+            </div>
+            <div class="budget-item">
+              <span class="budget-label">Продукція</span>
+              <span class="budget-amount">₴10,000</span>
+            </div>
+          </div>
+
+          <!-- Total -->
+          <div class="budget-total">
+            <div class="budget-total-label">💰 ЗАГАЛЬНИЙ БЮДЖЕТ</div>
+            <div class="budget-total-amount">₴120,000</div>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+              37.5% інфлюенсери | 33% реклама | 29.5% призи
+            </p>
+          </div>
+
+          <div class="info-box" style="margin-top: 20px">
+            <p><strong>✅ Очікуваний Результат:</strong></p>
+            <p>
+              К кінцю кампанії FUNJU буде відомий <strong style="color: #e63946">більшості (60-80%)</strong>
+              молодої української аудиторії. Коли побачать пляшку → згадають челендж.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-button" onclick="previousSlide()">← Назад</button>
+      <button class="nav-button" onclick="nextSlide()">Далі →</button>
+    </div>
+
+    <script>
+      let currentSlide = 1;
+      const totalSlides = 7;
+
+      const carouselPositions = {
+        productCarousel: 0,
+        prizesCarousel: 0,
+      };
+
+      function updateSlideCounter() {
+        document.getElementById("slideCounter").textContent = `Слайд ${currentSlide} / ${totalSlides}`;
+      }
+
+      function scrollToSlide(slideNumber) {
+        const slide = document.querySelector(`[data-slide="${slideNumber}"]`);
+        if (slide) {
+          slide.scrollIntoView({ behavior: "smooth", block: "start" });
+          currentSlide = slideNumber;
+          updateSlideCounter();
+        }
+      }
+
+      function nextSlide() {
+        if (currentSlide < totalSlides) {
+          scrollToSlide(currentSlide + 1);
+        }
+      }
+
+      function previousSlide() {
+        if (currentSlide > 1) {
+          scrollToSlide(currentSlide - 1);
+        }
+      }
+
+      function moveCarousel(carouselId, direction) {
+        const carousel = document.getElementById(carouselId);
+        const track = carousel.querySelector(".carousel-track");
+        const items = track.querySelectorAll(".carousel-item");
+        const indicators = carousel.parentElement.querySelectorAll(".carousel-indicator");
+
+        const totalItems = items.length;
+        carouselPositions[carouselId] = (carouselPositions[carouselId] + direction + totalItems) % totalItems;
+
+        const offset = -carouselPositions[carouselId] * 100;
+        track.style.transform = `translateX(${offset}%)`;
+
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle("active", index === carouselPositions[carouselId]);
+        });
+      }
+
+      function goToSlide(carouselId, slideIndex) {
+        const carousel = document.getElementById(carouselId);
+        const track = carousel.querySelector(".carousel-track");
+        const indicators = carousel.parentElement.querySelectorAll(".carousel-indicator");
+
+        carouselPositions[carouselId] = slideIndex;
+        const offset = -slideIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle("active", index === slideIndex);
+        });
+      }
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+          nextSlide();
+        } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+          previousSlide();
+        }
+      });
+
+      // Touch swipe support for slides
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      document.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      document.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            previousSlide();
+          }
+        }
+      }
+
+      // Intersection Observer
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            currentSlide = parseInt(entry.target.getAttribute("data-slide"));
+            updateSlideCounter();
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".slide").forEach((slide) => {
+        observer.observe(slide);
+      });
+    </script>
+  </body>
+</html>
